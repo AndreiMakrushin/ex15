@@ -1,13 +1,13 @@
-function DomElement(selector, height, width, bg, fontSize) {
-    this.selector = selector
-    this.height = height
-    this.width = width
-    this.bg = bg
-    this.fontSize = fontSize
+function DomElement(selector, height, width, background, fontSize) {
+    this.selector = selector;
+    this.height = height;
+    this.width = width;
+    this.bg = background;
+    this.fontSize = fontSize;
 }
 //-----------------------------------------------------------------------------------------------------------
 
-DomElement.prototype.newElem = () => {
+DomElement.prototype.newElem = function() {
     let elem;
     if (this.selector[0] === '.') {
         elem = document.createElement('div');
@@ -17,8 +17,8 @@ DomElement.prototype.newElem = () => {
         elem = document.createElement('p');
         elem.id = this.selector.slice(1)
     }
-    elem.cssText = `height: ${this.height}px; width: ${this.width}; bg: ${this.bg}; fontSize: ${this.fontSize};`;
-    return elem;
+    elem.style.cssText = `height: ${this.height}px; width: ${this.width}px; background: ${this.bg}; fontSize: ${this.fontSize};`;
+    return elem; 
 };
 //-----------------------------------------------------------------------------------------------------------
 
